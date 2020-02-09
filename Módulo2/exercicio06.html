@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <div id="add">
+        <input type="text" name="nome" />
+        <button class="botao">Acionar</button>
+    </div>
+    <script>
+        var but = document.querySelector('button.botao')
+        var res = document.querySelector('input[name=nome]')
+
+        res.innerHTML = ''
+        but.onclick = function (){
+            res.style.background = 'red'
+            res.style.height = '100px'
+            res.style.width = '100px'
+        }
+
+    </script>
+</body>
+</html>
