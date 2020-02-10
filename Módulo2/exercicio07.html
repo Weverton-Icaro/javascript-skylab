@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 07</title>
+</head>
+<body>
+    <div id="add">
+        <div class="box" ></div>
+        <button class="botao" id="adicionar" onclick="adicionar()" >Acionar</button>
+    </div>
+    <script>
+        var but = document.querySelector('button.botao')
+        
+        but.onclick = function adicionar(){
+            let box = document.createElement("div")
+            box.innerHTML = ''
+            box.style.backgroundColor = 'red'
+            box.style.height = '100px'
+            box.style.width = '100px'
+            box.style.margin = '10px'
+            box.style.paddingTop = '10px'
+            box.classList.add('box')
+            document.body.appendChild(box);
+        }
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+        }
+        let newColor = document.querySelector('.box')
+        newColor.addEventListener('mouseenter', getRandomColor);
+
+    </script>
+</body>
+</html>
