@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    <div id='app'>
+        <ul></ul>
+        <input type="text" name="nome">
+        <button onclick="adicionar()">Adicionar</button>
+    </div>
+    <script>
+        var list = document.querySelector('div#app ul')
+        var input = document.querySelector('#app input')
+        var button = document.querySelector('#app button')
+        
+        var nomes = ["Diego", "Gabriel", "Lucas"]
+
+        function render(){
+            list.innerHTML = ''
+            for (nome of nomes){
+                var todo = document.createElement('li');
+                var nomeText = document.createTextNode(nome);
+
+                todo.appendChild(nomeText);
+                list.appendChild(todo);
+            }
+        }
+        render();
+
+        function addTodo(){
+            var nomeText = input.value;
+
+            nomes.push(nomeText);
+            input.value = '';
+            render();
+        }
+
+        button.onclick = addTodo;
+
+    </script>
+    
+</body>
+</html>
