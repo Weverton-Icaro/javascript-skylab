@@ -23,6 +23,11 @@
             box.style.margin = '10px'
             box.style.paddingTop = '10px'
             box.classList.add('box')
+
+            box.onmouseover = function(){
+                box.style.backgroundColor = getRandomColor();
+            }
+            
             document.body.appendChild(box);
         }
         function getRandomColor() {
@@ -33,8 +38,7 @@
         }
         return color;
         }
-        let newColor = document.querySelector('.box')
-        newColor.addEventListener('mouseenter', getRandomColor);
+        
 
     </script>
 </body>
